@@ -64,7 +64,16 @@ h2,
 h3,
 h4,
 .font-display {
+    font-weight: 700;
+
     font-family: 'Plus Jakarta Sans', sans-serif;
+}
+
+.font-mono {
+    font-family: 'JetBrains Mono', monospace;
+    text-transform: uppercase;
+    letter-spacing: 0.1em;
+    font-size: 13px;
 }
 
 .font-label-caps {
@@ -127,6 +136,12 @@ h4,
 
 .nav-link-active {
     color: var(--primary-color) !important;
+    font-weight: 800;
+}
+
+html {
+    overflow-y: scroll;
+    scrollbar-gutter: stable;
 }
 
 .nav-link-active::after {
@@ -149,6 +164,8 @@ h4,
     background-color: #b0b1ff;
     box-shadow: 0 0 30px rgba(var(--primary-rgb), 0.3);
     color: white !important;
+    transform: scale(1.03);
+    border-color: white;
 }
 
 .download a {
@@ -170,6 +187,9 @@ h4,
 .btn-secondary-custom:hover {
     background-color: var(--indigo-accent) !important;
     box-shadow: 0 0 30px rgba(var(--primary-rgb), 0.4);
+    border: 1px solid var(--indigo-accent);
+    transform: scale(1.03);
+
     color: white !important;
 }
 

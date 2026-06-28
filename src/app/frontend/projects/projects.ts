@@ -6,4 +6,9 @@ import { Component } from '@angular/core';
   templateUrl: './projects.html',
   styleUrl: './projects.css',
 })
-export class Projects {}
+export class Projects {
+  colArray = [8, 4, 4, 4, 12]
+  calcCols(i: number) {
+    return this.colArray[i%5]
+  }
+}

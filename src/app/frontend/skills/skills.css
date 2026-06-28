@@ -6,13 +6,14 @@
             padding: 6px 12px !important;
             border-radius: 999px;
             text-transform: uppercase;
-            border: 1px solid var(--secondary);
+            border: 1px solid var(--tertiary);
             /* color:  var(--secondary) !important; */
         }
+
         :host {
-    display: flex;
-    flex: 1;
-}
+            display: flex;
+            flex: 1;
+        }
 
         .tag-pill {
             font-family: 'JetBrains Mono', monospace;
@@ -26,6 +27,7 @@
             text-decoration: none;
             opacity: 0.7;
         }
+
         .tag-pill:hover {
             border-color: var(--primary);
             color: var(--on-surface) !important;

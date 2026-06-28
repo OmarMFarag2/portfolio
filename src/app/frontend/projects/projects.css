@@ -48,6 +48,17 @@
 .glass-card:hover .project-overlay {
     opacity: 1;
 }
+        .badge-pill-custom {
+            font-family: 'JetBrains Mono', monospace;
+            font-size: 11px !important;
+            letter-spacing: 0.1em;
+            padding: 6px 12px !important;
+            border-radius: 999px;
+            text-transform: uppercase;
+            border: 1px solid var(--tertiary);
+            /* color:  var(--secondary) !important; */
+        }
+
 
 .glass-card {
     background: rgba(255, 255, 255, 0.03);
@@ -84,11 +95,12 @@
 }
 
 .badge-tag {
-    background: rgba(255, 175, 211, 0.1);
+    background: rgba(255, 175, 211, 0.2);
     color: var(--secondary);
     font-family: 'JetBrains Mono', monospace;
-    font-size: 10px;
+    font-size: 11px;
     padding: 4px 12px;
+    font-weight: 600;
     border-radius: 999px;
     text-transform: uppercase;
 }
@@ -104,6 +116,20 @@
     justify-content: flex-end;
     padding: 2rem;
     z-index: 10;
+}
+a i,a{
+    transition: all 0.3s;
+
+}
+.project{
+height: 400px;
+}
+a:hover{
+    font-weight: 800;
+}
+a:hover i{
+    transform: translateX(3px);
+    
 }
 
 .glass-card:hover .project-overlay {
