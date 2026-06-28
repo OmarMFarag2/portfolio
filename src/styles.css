@@ -1,1 +1,363 @@
-/* You can add global styles to this file, and also import other style files */
+@import url('https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:ital,wght@0,200..800;1,200..800&display=swap');
+
+
+
+:root {
+
+    --background: #0b1326;
+    --surface: #171f33;
+    --surface-bright: #31394d;
+
+    --primary: #c0c1ff;
+    --primary-container: #8083ff;
+    --on-primary: #1000a9;
+
+    --secondary: #4cd7f6;
+    --tertiary: #ffafd3;
+
+    --on-surface: #dae2fd;
+    --on-surface-variant: #c7c4d7;
+
+    --outline: #908fa0;
+
+    --section-gap: 120px;
+
+    --bg-color: #0b1326;
+    --surface-color: #171f33;
+
+    --primary-color: #c0c1ff;
+    --primary-variant: #8083ff;
+
+    --secondary-color: #4cd7f6;
+    --tertiary-color: #ffafd3;
+
+    --text-main: #dae2fd;
+    --text-muted: #c7c4d7;
+
+    --outline-color: rgba(255, 255, 255, 0.1);
+
+    --container-max: 1280px;
+
+    --surface-variant: #2d3449;
+    --surface-container-lowest: #060e20;
+
+    --primary-rgb: 192, 193, 255;
+
+    --indigo-accent: #6366f1;
+}
+
+body {
+    background-color: var(--bg-color) !important;
+    color: var(--text-main) !important;
+    font-family: 'Inter', sans-serif;
+    overflow-x: hidden;
+    -webkit-font-smoothing: antialiased;
+    max-height: 100vh;
+    overflow: auto;
+    /* display: flex ; */
+    /* justify-content: center; */
+    /* align-items: center !important; */
+}
+
+h1,
+h2,
+h3,
+h4,
+.font-display {
+    font-family: 'Plus Jakarta Sans', sans-serif;
+}
+
+.font-label-caps {
+    font-family: 'JetBrains Mono', monospace;
+    text-transform: uppercase;
+    letter-spacing: 0.1em;
+    font-size: 14px;
+    font-weight: 6r00;
+}
+
+/* Glassmorphism */
+.glass-card {
+    background: rgba(255, 255, 255, 0.05);
+    backdrop-filter: blur(12px);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    transition: border-color 0.3s ease, transform 0.3s ease;
+}
+
+.glass-card:hover {
+    border-color: rgba(255, 255, 255, 0.3);
+    transform: translateY(-10px);
+}
+
+/* Nav Customization */
+.navbar {
+    background: rgba(11, 19, 38, 0.05) !important;
+    backdrop-filter: blur(24px);
+    border-bottom: 2px solid rgba(255, 255, 255, 0.1);
+    height: 80px;
+}
+
+
+.nav-link-animated {
+    position: relative;
+    text-decoration: none;
+    color: var(--text-muted);
+    transition: color 0.3s ease;
+}
+
+.nav-link-animated::after {
+    content: '';
+    position: absolute;
+    bottom: -4px;
+    left: 50%;
+    width: 0;
+    height: 2px;
+    background-color: var(--primary-color) !important;
+    transition: all 0.5s cubic-bezier(0.23, 1, 0.32, 1);
+}
+
+.nav-link-animated:hover {
+    color: var(--primary-color);
+}
+
+.nav-link-animated:hover::after {
+    width: 100%;
+    left: 0;
+    background-color: var(--primary-color);
+}
+
+.nav-link-active {
+    color: var(--primary-color) !important;
+}
+
+.nav-link-active::after {
+    width: 100%;
+    left: 0;
+    background-color: var(--primary-color);
+}
+
+/* Custom Buttons */
+.btn-primary-custom {
+    color: var(--primary-color) !important;
+    background-color: var(--bg-color) !important;
+    padding: 12px 32px;
+    font-weight: 600;
+    transition: all 0.3s ease;
+    border: 1px solid var(--primary-color);
+}
+
+.btn-primary-custom:hover {
+    background-color: #b0b1ff;
+    box-shadow: 0 0 30px rgba(var(--primary-rgb), 0.3);
+    color: white !important;
+}
+
+.download a {
+    all: unset !important;
+    cursor: pointer;
+    text-decoration: none !important;
+    color: inherit !important;
+}
+
+.btn-secondary-custom {
+    color: var(--surface-color) !important;
+    background-color: var(--primary-color) !important;
+    padding: 12px 32px;
+    font-weight: 600;
+    transition: all 0.3s ease;
+    border: 1px solid var(--primary-color);
+}
+
+.btn-secondary-custom:hover {
+    background-color: var(--indigo-accent) !important;
+    box-shadow: 0 0 30px rgba(var(--primary-rgb), 0.4);
+    color: white !important;
+}
+
+.btn-secondary-custom:hover i {
+    transform: translateX(5px);
+}
+
+.btn-secondary-custom i {
+    transition: all 0.3s ease;
+}
+
+@keyframes identifier {}
+
+.btn-outline-custom {
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    color: var(--text-main);
+    border-radius: 50px;
+    padding: 12px 32px;
+    transition: all 0.3s ease;
+}
+
+/* .btn-outline-custom:hover {
+    background: rgba(255, 255, 255, 0.05);
+    color: white;
+} */
+
+/* Layout Helpers */
+.section-gap {
+    padding-top: 120px;
+    padding-bottom: 120px;
+}
+
+.hero-display {
+    font-size: 72px;
+    font-weight: 800;
+    line-height: 1.1;
+    letter-spacing: -0.04em;
+}
+
+@media (max-width: 768px) {
+    .hero-display {
+        font-size: 48px;
+    }
+}
+
+/* Animations */
+@keyframes float {
+
+    0%,
+    100% {
+        transform: translateY(0);
+    }
+
+    50% {
+        transform: translateY(-10px);
+    }
+}
+
+.animate-float {
+    animation: float 6s ease-in-out infinite;
+}
+
+.pulse-dot {
+    width: 8px;
+    height: 8px;
+    border-radius: 50%;
+    background-color: var(--tertiary-color);
+    display: inline-block;
+    animation: pulse-animation 2s infinite;
+}
+
+@keyframes pulse-animation {
+    0% {
+        transform: scale(0.95);
+        box-shadow: 0 0 0 0 rgba(255, 175, 211, 0.7);
+    }
+
+    70% {
+        transform: scale(1);
+        box-shadow: 0 0 0 10px rgba(255, 175, 211, 0);
+    }
+
+    100% {
+        transform: scale(0.95);
+        box-shadow: 0 0 0 0 rgba(255, 175, 211, 0);
+    }
+}
+
+/* Decorative Gradients */
+.bg-glow-top {
+    position: absolute;
+    top: 0;
+    right: 0;
+    width: 600px;
+    height: 600px;
+    background: radial-gradient(circle, rgba(var(--primary-rgb), 0.1) 0%, transparent 70%);
+    z-index: -1;
+    transform: translate(30%, -30%);
+    filter: blur(80px);
+}
+
+.bg-glow-bottom {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 800px;
+    height: 800px;
+    background: radial-gradient(circle, rgba(76, 215, 246, 0.05) 0%, transparent 70%);
+    z-index: -1;
+    transform: translate(-20%, 20%);
+    filter: blur(100px);
+}
+
+/* Material Symbols */
+.material-symbols-outlined {
+    font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+    vertical-align: middle;
+}
+
+/* Feature Icons */
+.icon-box {
+    width: 48px;
+    height: 48px;
+    border-radius: 8px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 24px;
+}
+
+/* Hero Image Container */
+.hero-img-container {
+    position: relative;
+    width: 400px;
+    height: 550px;
+}
+
+.hero-img-overlay {
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(to top, rgba(11, 19, 38, 0.8), transparent);
+    z-index: 2;
+}
+
+::-webkit-scrollbar {
+    width: 8px;
+}
+
+::-webkit-scrollbar-track {
+    background: var(--background);
+}
+
+::-webkit-scrollbar-thumb {
+    background: #171f33;
+    border-radius: 4px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+    background: #2d3449;
+}
+
+.badge-secondary {
+    background: rgba(76, 215, 246, 0.1);
+    color: var(--secondary);
+}
+
+.badge-tertiary {
+    background: rgba(255, 175, 211, 0.1);
+    color: var(--tertiary);
+}
+
+.badge-primary {
+    background: rgba(192, 193, 255, 0.1);
+    color: var(--primary);
+}
+
+.text-primary-custom {
+    color: var(--primary);
+}
+
+.text-secondary-custom {
+    color: var(--secondary);
+}
+
+.text-tertiary-custom {
+    color: var(--tertiary);
+}
+
+.text-on-surface-variant {
+    color: var(--on-surface-variant);
+}

@@ -1,0 +1,33 @@
+        /* Badge Styles */
+        .badge-pill-custom {
+            font-family: 'JetBrains Mono', monospace;
+            font-size: 11px !important;
+            letter-spacing: 0.1em;
+            padding: 6px 12px !important;
+            border-radius: 999px;
+            text-transform: uppercase;
+            border: 1px solid var(--secondary);
+            /* color:  var(--secondary) !important; */
+        }
+        :host {
+    display: flex;
+    flex: 1;
+}
+
+        .tag-pill {
+            font-family: 'JetBrains Mono', monospace;
+            font-size: 11px;
+            color: var(--on-surface-variant) !important;
+            border: 1px solid rgba(255, 255, 255, 0.05);
+            padding: 8px 16px;
+            border-radius: 999px;
+            transition: all 0.3s ease;
+            cursor: default;
+            text-decoration: none;
+            opacity: 0.7;
+        }
+        .tag-pill:hover {
+            border-color: var(--primary);
+            color: var(--on-surface) !important;
+            opacity: 1;
+        }
