@@ -1,0 +1,47 @@
+        :host {
+            display: flex;
+            flex: 1;
+        }
+.example-form-field {
+    width: 100%;
+}
+form p{
+    color: rgb(255, 114, 114);
+}
+/* Container for preview and remove button */
+.preview-container {
+  margin-top: 12px;
+  position: relative;
+  width: fit-content;
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+/* Style and constrain the preview image */
+.image-preview {
+  max-width: 300px;
+  max-height: 300px;
+  object-fit: cover;
+  border-radius: 8px;
+  border: 1px solid #e5e7eb;
+  box-shadow: 0 4px 6px -1px rgb(0 0 0 / 0.1);
+}
+
+/* Red remove button styling */
+.remove-btn {
+  background-color: #ef4444;
+  color: white;
+  border: none;
+  padding: 6px 12px;
+  border-radius: 4px;
+  cursor: pointer;
+  font-size: 0.875rem;
+  font-weight: 500;
+  transition: background-color 0.2s;
+  width: fit-content;
+}
+
+.remove-btn:hover {
+  background-color: #dc2626;
+}

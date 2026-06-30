@@ -1,0 +1,16 @@
+<mat-form-field class="example-form-field w-100">
+    <mat-label>{{title}}</mat-label>
+    <mat-chip-grid #templateChipGrid aria-label="Enter template form keywords">
+        @for (keyword of keywords(); track keyword) {
+        <mat-chip-row (removed)="removeKeyword(keyword)">
+            {{keyword}}
+            <button matChipRemove [attr.aria-label]="'remove template form' + keyword">
+                <mat-icon>cancel</mat-icon>
+            </button>
+        </mat-chip-row>
+        }
+    </mat-chip-grid>
+
+    <input pattern="123" #tag="ngModel" name="tag" ngModel placeholder="press Enter to add"
+        [matChipInputFor]="templateChipGrid" (matChipInputTokenEnd)="addKeyword($event)" />
+</mat-form-field>

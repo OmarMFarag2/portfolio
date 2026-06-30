@@ -156,9 +156,35 @@ html {
     background-color: var(--bg-color) !important;
     padding: 12px 32px;
     font-weight: 600;
-    transition: all 0.3s ease;
+    transition:
+        box-shadow 0.3s ease,
+        color 0.3s ease,
+        border 0.3s ease,
+        transform 0.3s ease;
     border: 1px solid var(--primary-color);
 }
+
+.Disabled,
+.Disabled:hover {
+    color: var(--text-muted) !important;
+    background-color: rgb(54, 54, 54) !important;
+    transition: all 0.3s ease;
+    box-shadow: none !important;
+    border: 1px solid rgb(54, 54, 54) !important;
+    cursor: no-drop !important;
+}
+
+.delete {
+    color: red !important;
+    border-color: red !important;
+}
+
+.delete:hover {
+    color: white !important;
+    border-color: red !important;
+    background-color: red !important;
+}
+
 
 .btn-primary-custom:hover {
     background-color: #b0b1ff;
@@ -166,6 +192,7 @@ html {
     color: white !important;
     transform: scale(1.03);
     border-color: white;
+    cursor: pointer;
 }
 
 .download a {
@@ -184,12 +211,16 @@ html {
     border: 1px solid var(--primary-color);
 }
 
+.mat-mdc-text-field-wrapper.mdc-text-field.mdc-text-field--filled {
+    background-color: rgb(192 193 255) !important;
+}
+
 .btn-secondary-custom:hover {
     background-color: var(--indigo-accent) !important;
     box-shadow: 0 0 30px rgba(var(--primary-rgb), 0.4);
     border: 1px solid var(--indigo-accent);
     transform: scale(1.03);
-
+    cursor: pointer !important;
     color: white !important;
 }
 
@@ -198,6 +229,14 @@ html {
 }
 
 .btn-secondary-custom i {
+    transition: all 0.3s ease;
+}
+
+.btn-secondary-custom:hover .fa-gear {
+    transform: rotate(180deg)
+}
+
+.btn-secondary-custom .fa-gear {
     transition: all 0.3s ease;
 }
 
@@ -380,4 +419,20 @@ html {
 
 .text-on-surface-variant {
     color: var(--on-surface-variant);
+}
+
+.mat-mdc-text-field-wrapper.mdc-text-field.mdc-text-field--filled {
+    background-color: rgb(223, 223, 223);
+    color: white;
+}
+
+.mdc-text-field--filled:not(.mdc-text-field--disabled) .mdc-text-field__input {
+    color: white;
+}
+
+.add {
+    border-radius: 999px !important;
+    font-size: 30px !important;
+    width: 150px !important;
+    height: 150px !important;
 }

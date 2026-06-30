@@ -5,6 +5,8 @@ import { Dashboard } from './dashboard/dashboard';
 import { Home as dashHome } from './dashboard/home/home';
 import { Skills as frontSkills } from './frontend/skills/skills';
 import { Projects as frontProjects } from './frontend/projects/projects';
+import { Skills as dashSkills } from './dashboard/skills/skills';
+import { Projects as dashProjects } from './dashboard/projects/projects';
 
 export const routes: Routes = [
     {
@@ -17,7 +19,10 @@ export const routes: Routes = [
     },
     {
         path: 'dashboard', component: Dashboard, children: [
+            { path: '',redirectTo:'home',pathMatch:'full'},
             { path: 'home', component: dashHome },
+            { path: 'skills', component: dashSkills },
+            { path: 'projects', component: dashProjects },
             // { path:'home',component:frontHome},
         ]
     },

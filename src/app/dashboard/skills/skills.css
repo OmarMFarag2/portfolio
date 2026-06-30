@@ -1,0 +1,10 @@
+        :host {
+            display: flex;
+            flex: 1;
+        }
+.example-form-field {
+    width: 100%;
+}
+form p{
+    color: rgb(255, 114, 114);
+}

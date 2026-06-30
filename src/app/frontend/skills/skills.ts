@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { ChangeDetectorRef, Component, OnInit } from '@angular/core';
 import { ISkills } from '../../core/models/iskills';
 import { SkillsApi } from '../../core/services/skills-api';
 
@@ -10,8 +10,13 @@ import { SkillsApi } from '../../core/services/skills-api';
 })
 export class Skills implements OnInit{
   skillList!:ISkills[]
-  constructor(private _skillSer:SkillsApi){}
+  constructor(private _skillSer:SkillsApi, private cdr:ChangeDetectorRef){}
   ngOnInit(): void {
-    this.skillList=this._skillSer.getSkills()    
+       this._skillSer.getSkills().subscribe(data=>{
+        this.skillList = data
+        this.cdr.detectChanges()
+        console.log(data);
+        
+       })
   }
 }

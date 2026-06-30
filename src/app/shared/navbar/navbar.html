@@ -1,0 +1,40 @@
+<nav class="navbar py-3 fixed-top navbar-expand-md">
+    <div class="container-xl px-lg-5">
+        <div class="d-lg-block">
+            <button [routerLink]="switch=='dashboard'? '/dashboard':'/home'"
+                class="r rounded-pill d-flex gap-1 btn-secondary-custom font-label-caps">{{switch}} <span
+                    class="d-flex justify-content-center align-items-center"><i [class]="'fa-solid ' + (switch === 'dashboard' ? 'fa-gear' : 'fa-tv')"></i></span></button>
+        </div>
+        <button class="navbar-toggler border-0 shadow-none text-primary" data-bs-target="#navbarNav"
+            data-bs-toggle="collapse" type="button">
+            <span class="material-symbols-outlined">menu</span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarNav">
+            <ul class="navbar-nav mx-auto gap-lg-4">
+                <li class="nav-item">
+                    <a class="nav-link-animated font-label-caps nav-link-active py-2 d-inline-block" routerLink="home"
+                        routerLinkActive="nav-link-active">Home</a>
+                </li>
+                <li class="nav-item ">
+                    <a class="nav-link-animated font-label-caps py-2 d-inline-block" routerLink="home"
+                        routerLinkActive="nav-link-active">About</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link-animated font-label-caps py-2 d-inline-block" routerLink="skills"
+                        routerLinkActive="nav-link-active">Skills</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link-animated font-label-caps py-2 d-inline-block" routerLink="projects"
+                        routerLinkActive="nav-link-active">Projects</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link-animated font-label-caps py-2 d-inline-block" routerLink="home"
+                        routerLinkActive="nav-link-active">Contact</a>
+                </li>
+            </ul>
+            <div class="d-lg-block">
+                <button class="r rounded-pill btn-primary-custom font-label-caps">Get in Touch</button>
+            </div>
+        </div>
+    </div>
+</nav>

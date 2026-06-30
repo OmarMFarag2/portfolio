@@ -6,23 +6,23 @@
         </p>
     </div>
     <!-- Project 1 -->
-    <div class="row overflow-x-hidden">
-        <div [class]="'col-md-'+colArray[1]+' p-1 flex-grow-1 project'">
-            <div class="glass-card h-custom-lg">
+    <div class="row">
+        @for (project of projectList; track project; let i = $index) {
+        <div [class]="'col-md-6 p-1 bg-danger flex-grow-1 project'">
+            <div class="glass-card p-2 bg-info">
                 <img alt="Dashboard interface" width="100%" class="image-zoom"
-                    src="https://lh3.googleusercontent.com/aida-public/AB6AXuDur6OFuXSrEkl81J2J6XO_zyc9WO0ZY42-H7VXoLmSszhwYblVZt2u-hJFh6Ui6zzqRTZNX9CeNZ3Sr_U4QxMB0VQDFi6JVo9ET7kbgd4_PfQXqD9hTFeVyRx2lLauqAVneEBmE_DlTPaW4u0e3Riis0ebEldUVTW_gu0OmWUYnywBLIXfpnatI48yiKsNrnDk7SWFFJUsFfgYMOEWHebWRNzTn43IX9NeA18kHU5dFFrKdiWkLx1IMYSaHfwFbeJ8ZQPSv9LVb2uE" />
+                    [src]="'http://localhost:3000/files/' + project.imgURL" />
                 <div class="project-overlay">
                     <div class="d-flex gap-2 mb-3">
-                        <span class="badge-tag">WEB ARCHITECTURE</span>
-                        <span class="badge-tag">DATA VIZ</span>
+                        @for (tech of project.techs; track tech) {
+                        <span class="badge-tag">{{tech}}</span>}
                     </div>
-                    <h3 class="fs-2 text-white mb-2">OmniSight Dashboard</h3>
-                    <p class="mb-4">Next-generation enterprise data monitoring with real-time WebGL
-                        visualization and neural-link integration patterns.</p>
+                    <h3 class="fs-2 text-white mb-2">{{project.name}}</h3>
+                    <p class="mb-4">{{project.desc}}</p>
                     <div class="d-flex text-secondary-custom justify-content-start align-items-center">
                         <a target="_blank"
                             class="text-decoration-none text-secondary-custom font-mono d-flex align-items-center "
-                            href="#">
+                            [href]="project.link">
                             VIEW PROJECT
                             <span class="d-flex align-items-center p-1"><i class="fa-solid fa-arrow-right"></i></span>
                         </a>
@@ -30,6 +30,6 @@
                 </div>
             </div>
         </div>
-
+        }
     </div>
 </section>
