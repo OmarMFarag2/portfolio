@@ -1,0 +1,95 @@
+<!-- Contact Section -->
+<section class="d-flex flex-column justify-content-center position-relative" id="contact">
+    <div class="row">
+        <!-- Info Column -->
+        <div class="col-lg-5 d-flex justify-content-center align-items-center flex-column">
+            <div>
+                <div class="mb-5">
+                    <span class="label-caps text-secondary-custom d-block mb-3">Connectivity</span>
+                    <h2 class="display-5 mb-4">Let's build the <span class="text-primary-custom">extraordinary</span>
+                        together.</h2>
+                    <p class="fs-5 text-variant" style="max-width: 450px;">
+                        Whether you have a specific project in mind or just want to explore possibilities, my inbox is
+                        always open for innovators and dreamers.
+                    </p>
+                </div>
+                <div class="d-flex flex-column gap-4 mb-5">
+                    <div class="d-flex align-items-center gap-4">
+                        <div class="glass-card d-flex align-items-center justify-content-center rounded-3"
+                            style="width: 48px; height: 48px;">
+                            <span class="text-secondary-custom"><i class="fa-solid fa-envelope fs-4"></i></span>
+                        </div>
+                        <div>
+                            <p class="label-caps text-variant mb-0">Email</p>
+                            <p class="fs-5 fw-medium mb-0">{{contact?.email}}</p>
+                        </div>
+                    </div>
+                    <div class="d-flex align-items-center gap-4">
+                        <div class="glass-card d-flex align-items-center justify-content-center rounded-3"
+                            style="width: 48px; height: 48px;">
+                            <span class="text-primary-custom"><i class="fa-solid fa-location-dot fs-4"></i></span>
+                        </div>
+                        <div>
+                            <p class="label-caps text-variant mb-0">Location</p>
+                            <p class="fs-5 fw-medium mb-0">{{contact?.location}}</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- Form Column -->
+        <div class="col-lg-7">
+            <form class="glass-card p-4 p-md-5 rounded-5" ngForm #form="ngForm" (submit)="onsubmit(form)"
+                id="contactForm">
+                <div class="row g-4 mb-4">
+                    <div class="col-md-6">
+                        <label class="label-caps text-variant d-block mb-2" for="from">Your Name</label>
+                        <input required name="from" ngModel #from="ngModel" class="form-control contact-form-input"
+                            id="from" placeholder="John Doe" type="text" />
+                        @if(from.invalid && from.touched){
+                        @if (from.errors?.['required']) {
+                        <p>name is required </p>
+                        }
+                        }
+                    </div>
+                    <div class="col-md-6">
+                        <label class="label-caps text-variant d-block mb-2" for="email">Email Address</label>
+                        <input required name="email" ngModel #email="ngModel" class="form-control contact-form-input" id="email"
+                            placeholder="john@example.com" type="email" />
+                        @if(email.invalid && email.touched){
+                        @if (email.errors?.['required']) {
+                        <p>email is required </p>
+                        }
+                        }
+                    </div>
+                </div>
+                <div class="mb-4">
+                    <label class="label-caps text-variant d-block mb-2" for="subject">Subject</label>
+                    <input required ngModel name="subject" #subject="ngModel" class="form-control contact-form-input"
+                        id="subject" placeholder="John Doe" type="text" />
+                    @if(subject.invalid && subject.touched){
+                    @if (subject.errors?.['required']) {
+                    <p>subject is required </p>
+                    }
+                    }
+                </div>
+                <div class="mb-5">
+                    <label class="label-caps text-variant d-block mb-2" for="message">Project Brief</label>
+                    <textarea required name="brief" ngModel #brief="ngModel" class="form-control contact-form-input"
+                        id="message" placeholder="Tell me about your vision..." rows="5"></textarea>
+                    @if(brief.invalid && brief.touched){
+                    @if (brief.errors?.['required']) {
+                    <p>brief is required </p>
+                    }
+                    }
+                </div>
+                <button
+                [disabled]="form.invalid"
+                    [class]="' d-flex justify-content-center align-items-center gap-2  w-100 rounded-2 '+(form.invalid? ' Disabled':'btn-secondary-custom' )"
+                    type="submit">
+                    Send
+                </button>
+            </form>
+        </div>
+    </div>
+</section>

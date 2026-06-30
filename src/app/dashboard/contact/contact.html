@@ -1,0 +1,61 @@
+<section class="d-flex w-100 flex-column justify-content-center">
+    <div class="">
+        <div class="text-center">
+            <h2 class="display-5 fw-bold mb-3">Contact <span class="text-primary-custom">Info</span></h2>
+        </div>
+        <div class="row">
+            @if(contact){
+            <div class="col-md-6 flex-grow-1 px-2 py-2">
+                <div class="glass-card p-4 p-md-4 rounded-4">
+                    <form class="d-flex flex-column justify-content-between" (ngSubmit)="submit(form)" ngForm #form="ngForm">
+                        <mat-form-field>
+                            <mat-label>Enter email</mat-label>
+                            <input pattern="^[A-Za-z0-9._%+\-]+@[A-Za-z0-9.\-]+\.[A-Za-z]{2,}$" required [(ngModel)]="contact.email" name="email"
+                                #email="ngModel" matInput>
+                        </mat-form-field>
+                        @if(email.invalid && email.touched){
+                        @if(email.errors?.['required'])
+                        {
+                        <p class="pb-2">email is required</p>
+                        }
+                        @if(email.errors?.['pattern'])
+                        {
+                        <p class="pb-2">email is invalid</p>
+                        }
+                        }
+                        <mat-form-field>
+                            <mat-label>Enter location</mat-label>
+                            <textarea required [(ngModel)]="contact.location"
+                                name="location" #location="ngModel" matInput matInput></textarea>
+                        </mat-form-field>
+                        @if(location.invalid&&location.touched){
+                        @if(location.errors?.['required'])
+                        {
+                        <p class="pb-2">location is required</p>
+                        }
+                        }
+                        <div class="d-flex gap-2 pt-3 justify-content-center align-items-center">
+                            <input [disabled]="form.invalid" type="submit" [value]="contact._id===''?'Add':'update'"
+                                [class]="' rounded-3 flex-grow-1 col-md-7 flex-grow-1 ' + (form.invalid ? 'Disabled' : 'btn-primary-custom')">
+
+                            <button (click)="delete(contact._id!) " type="button"
+                                class="btn-primary-custom delete rounded-3 ">Delete</button>
+                        </div>
+                    </form>
+                </div>
+            </div>
+            }
+            @else {
+
+            <div
+                class="col-md-1 flex-grow-1 px-2 py-2 d-flex flex-column gap-3 justify-content-center align-items-center">
+                <div (click)="createContact()"
+                    class="d-flex btn-primary-custom justify-content-center align-items-center add">
+                    <i class="fa fa-plus"></i>
+                </div>
+                <h4>Add</h4>
+            </div>
+            }
+        </div>
+    </div>
+</section>

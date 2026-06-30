@@ -1,0 +1,30 @@
+<section class="d-flex w-100 flex-column justify-content-center" id="messages">
+    <div class="">
+        <div class="text-center">
+            <h2 class="display-5 fw-bold mb-3">Messages</h2>
+        </div>
+        <!-- Bento-style Skills Grid -->
+        <div class="row">
+            @if(messages!.length > 0){
+            @for (message of messages; track message;let i = $index) {
+            <div class="col-md-6 flex-grow-1 px-2 py-2">
+                <div class="glass-card p-4 p-md-4 rounded-4 d-flex flex-column justify-content-between">
+                    <div>
+                        <p class="text-secondary-custom">{{'From: '+message.from}}</p>
+                        <p class="text-secondary-custom">{{'Email: '+message.email}}</p>
+                        <p class="text-secondary-custom">{{'Subject: '+message.subject}}</p>
+                        <p class="text-secondary-custom">{{'Brief: '+message.brief}}</p>
+                        <button (click)="delete(i,message._id) " type="button"
+                            class="btn-primary-custom w-100 delete rounded-3 ">Delete</button>
+                    </div>
+                </div>
+            </div>}
+
+            }
+            @else{
+
+            <h2 class="text-center">no messages!</h2>
+            }
+        </div>
+    </div>
+</section>

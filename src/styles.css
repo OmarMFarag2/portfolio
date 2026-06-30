@@ -81,7 +81,7 @@ h4,
     text-transform: uppercase;
     letter-spacing: 0.1em;
     font-size: 14px;
-    font-weight: 6r00;
+    font-weight: 600;
 }
 
 /* Glassmorphism */
@@ -105,6 +105,13 @@ h4,
     height: 80px;
 }
 
+.label-caps {
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 12px;
+    text-transform: uppercase;
+    letter-spacing: 0.1em;
+    font-weight: 500;
+}
 
 .nav-link-animated {
     position: relative;
@@ -123,6 +130,7 @@ h4,
     background-color: var(--primary-color) !important;
     transition: all 0.5s cubic-bezier(0.23, 1, 0.32, 1);
 }
+
 
 .nav-link-animated:hover {
     color: var(--primary-color);
@@ -166,9 +174,14 @@ html {
 
 .Disabled,
 .Disabled:hover {
+    padding: 12px 32px;
+    font-weight: 600;
     color: var(--text-muted) !important;
     background-color: rgb(54, 54, 54) !important;
-    transition: all 0.3s ease;
+    transition:         box-shadow 0.3s ease,
+        color 0.3s ease,
+        border 0.3s ease,
+        transform 0.3s ease;
     box-shadow: none !important;
     border: 1px solid rgb(54, 54, 54) !important;
     cursor: no-drop !important;
@@ -207,7 +220,10 @@ html {
     background-color: var(--primary-color) !important;
     padding: 12px 32px;
     font-weight: 600;
-    transition: all 0.3s ease;
+    transition: box-shadow 0.3s ease,
+        color 0.3s ease,
+        border 0.3s ease,
+        transform 0.3s ease;
     border: 1px solid var(--primary-color);
 }
 
@@ -226,6 +242,10 @@ html {
 
 .btn-secondary-custom:hover i {
     transform: translateX(5px);
+}
+
+form p {
+    color: rgb(255, 114, 114);
 }
 
 .btn-secondary-custom i {

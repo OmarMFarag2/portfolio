@@ -6,9 +6,7 @@ import { HttpClient } from '@angular/common/http';
   providedIn: 'root',
 })
 export class SkillsApi {
-  // skills: ISkills[] = [{
-  //   name: 'Frontend Engineering', desc: "Building responsive, accessible, and performant web applications with modern frameworks.", tags: ["asd","asdsad"] },{
-  //   name: 'Frontend Engineering', desc: "Building responsive, accessible, and performant web applications with modern frameworks.", tags: ["asd","asdsad"] }]
+
   constructor(private _http: HttpClient) { }
   api = "http://localhost:3000/api/skills"
   getSkills() {

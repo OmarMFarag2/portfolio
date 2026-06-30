@@ -15,10 +15,6 @@
                     <a class="nav-link-animated font-label-caps nav-link-active py-2 d-inline-block" routerLink="home"
                         routerLinkActive="nav-link-active">Home</a>
                 </li>
-                <li class="nav-item ">
-                    <a class="nav-link-animated font-label-caps py-2 d-inline-block" routerLink="home"
-                        routerLinkActive="nav-link-active">About</a>
-                </li>
                 <li class="nav-item">
                     <a class="nav-link-animated font-label-caps py-2 d-inline-block" routerLink="skills"
                         routerLinkActive="nav-link-active">Skills</a>
@@ -28,12 +24,12 @@
                         routerLinkActive="nav-link-active">Projects</a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link-animated font-label-caps py-2 d-inline-block" routerLink="home"
+                    <a class="nav-link-animated font-label-caps py-2 d-inline-block" routerLink="contact"
                         routerLinkActive="nav-link-active">Contact</a>
                 </li>
             </ul>
             <div class="d-lg-block">
-                <button class="r rounded-pill btn-primary-custom font-label-caps">Get in Touch</button>
+                <button [routerLink]="switch!=='dashboard'? 'messages':'contact'" class="r rounded-pill btn-primary-custom font-label-caps">{{switch=='dashboard'? 'Get in Touch':'Messages'}}</button>
             </div>
         </div>
     </div>

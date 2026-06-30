@@ -5,9 +5,7 @@
 .example-form-field {
     width: 100%;
 }
-form p{
-    color: rgb(255, 114, 114);
-}
+
 /* Container for preview and remove button */
 .preview-container {
   margin-top: 12px;

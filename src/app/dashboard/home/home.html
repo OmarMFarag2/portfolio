@@ -1,1 +1,118 @@
-<p>home works!</p>
+<section class="d-flex w-100 flex-column justify-content-center">
+    <div class="">
+        <div class="text-center">
+            <h2 class="display-5 fw-bold mb-3">Home</h2>
+        </div>
+        <div class="row">
+            @if(home){
+            <div class="col-md-6 flex-grow-1 px-2 py-2">
+                <div class="glass-card p-4 p-md-4 rounded-4">
+                    <form class="d-flex flex-column justify-content-between" (ngSubmit)="submit(form)" #form="ngForm">
+                        <mat-form-field>
+                            <mat-label>Enter title</mat-label>
+                            <input pattern="^[A-Za-z0-9\s#'+,.\-:;!?\(\)]{2,300}$" required [(ngModel)]="home.title" name="title"
+                                #title="ngModel" matInput>
+                        </mat-form-field>
+                        @if(title.invalid&&title.touched){
+                        @if(title.errors?.['required'])
+                        {
+                        <p class="pb-2">title is required</p>
+                        }
+                        @if(title.errors?.['pattern'])
+                        {
+                        <p class="pb-2">title is invalid</p>
+                        }
+                        }
+                        <mat-form-field>
+                            <mat-label>Enter keyword</mat-label>
+                            <input pattern="^[A-Za-z0-9#+.\-]{2,50}$" required [(ngModel)]="home.keyword" name="keyword"
+                                #keyword="ngModel" matInput>
+                        </mat-form-field>
+                        @if(keyword.invalid&&keyword.touched){
+                        @if(keyword.errors?.['required'])
+                        {
+                        <p class="pb-2">keyword is required</p>
+                        }
+                        @if(keyword.errors?.['pattern'])
+                        {
+                        <p class="pb-2">keyword is invalid</p>
+                        }
+                        }
+                        <mat-form-field>
+                            <mat-label>Enter Description</mat-label>
+                            <textarea pattern="^[A-Za-z0-9#+,:;.\- ]{2,300}$" required [(ngModel)]="home.desc"
+                                name="desc" #desc="ngModel" matInput matInput></textarea>
+                        </mat-form-field>
+                        @if(desc.invalid&&desc.touched){
+                        @if(desc.errors?.['required'])
+                        {
+                        <p class="pb-2">description is required</p>
+                        }
+                        @if(desc.errors?.['pattern'])
+                        {
+                        <p class="pb-2">description is invalid</p>
+                        }
+                        }
+                        <div>
+                            <input required name="imgURL" type="file" id="custom-file-input" #fileInput required
+                                class="d-none" (change)="onFileSelected($event,'imgURL')" />
+
+                            <label for="custom-file-input"
+                                class="btn-primary-custom d-flex justify-content-center align-content-center rounded-3 text-center gap-2 custom-file-label">
+
+                                @if(fileNames.imgURL!==''){
+                                Image: {{fileNames.imgURL}}
+                                }
+                                @else if(home.imgURL!==''){
+                                Image: {{home.imgURL}}
+                                }
+                                @else {
+                                Upload Image
+                                }
+                                <span><i class="fa-solid fs-4 fa-cloud-arrow-up"></i></span>
+                            </label>
+                        </div>
+                        <div class="pt-3">
+                            <input required name="cv" type="file" id="custom-file-input2" #fileInput2 required
+                                class="d-none" (change)="onFileSelected($event,'cv')" />
+
+                            <label for="custom-file-input2"
+                                class="btn-primary-custom d-flex justify-content-center align-content-center rounded-3 text-center gap-2 custom-file-label">
+
+                                @if(fileNames.cv!==''){
+                                cv: {{fileNames.cv}}
+                                }
+                                @else if(home.cv!==''){
+                                 cv: {{home.cv}}
+                                }
+                                @else {
+                                cv:  Upload cv
+                                }
+                                <span><i class="fa-solid fs-4 fa-file"></i></span>
+                            </label>
+                        </div>
+                        <div class="d-flex gap-2 pt-3 justify-content-center align-items-center">
+                            <input [disabled]="validateUploads(form)" type="submit" [value]="home._id===''?'Add':'update'"
+                                [class]="'btn-primary-custom rounded-3 flex-grow-1 col-md-7 flex-grow-1 ' + (validateUploads(form) ? 'Disabled' : '')">
+
+                            <button (click)="delete(home._id!) " type="button"
+                                class="btn-primary-custom delete rounded-3 ">Delete</button>
+                        </div>
+                    </form>
+                </div>
+            </div>
+            }
+            @else {
+
+            <div
+                class="col-md-1 flex-grow-1 px-2 py-2 d-flex flex-column gap-3 justify-content-center align-items-center">
+                <div (click)="createHome()"
+                    class="d-flex btn-primary-custom justify-content-center align-items-center add">
+                    <i class="fa fa-plus"></i>
+                </div>
+                <h4>Add</h4>
+            </div>
+            }
+        </div>
+    </div>
+</section>

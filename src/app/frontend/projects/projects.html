@@ -8,8 +8,8 @@
     <!-- Project 1 -->
     <div class="row">
         @for (project of projectList; track project; let i = $index) {
-        <div [class]="'col-md-6 p-1 bg-danger flex-grow-1 project'">
-            <div class="glass-card p-2 bg-info">
+        <div [class]="'col-md-'+colArray[i]%5+' p-3 flex-grow-1 project'">
+            <div class="glass-card">
                 <img alt="Dashboard interface" width="100%" class="image-zoom"
                     [src]="'http://localhost:3000/files/' + project.imgURL" />
                 <div class="project-overlay">

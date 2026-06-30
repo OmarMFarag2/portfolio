@@ -1,0 +1,22 @@
+        .contact-form-input {
+            background-color: var(--surface);
+            border: none;
+            border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+            color: var(--on-surface);
+            padding: 16px 0;
+            border-radius: 0;
+            transition: all 0.3s ease;
+        }
+
+        .contact-form-input:focus {
+            background-color: var(--surface);
+            box-shadow: none;
+            border-bottom-color: var(--primary);
+            color: var(--on-surface);
+            box-shadow: 0 10px 15px -3px rgba(192, 193, 255, 0.1);
+        }
+
+        .contact-form-input::placeholder {
+            color: rgba(218, 226, 253, 0.4);
+        }
+        
